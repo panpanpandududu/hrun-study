@@ -1,0 +1,45 @@
+config:
+    name: 添加商品-成功
+    base_url: ${ENV(base_url)}
+    variables:
+        goodsname: yoyo
+        goodscode: "${goods_code()}"
+        merchantid: "10001"
+        merchantname: "悠悠学堂"
+        goodsprice: 99.9
+        stock: 100
+        goodsgroupid: 0
+        goodsstatus: 1
+        price: 21.0
+    parameters:
+        goodsname-goodscode-merchantname-code-msg:
+        - ["yoyo123", "${goods_code()}", null, 0, success!]
+        - ["yoyo123", "${goods_code()}", "123456", 0, success!]
+        - ["yoyo123", "${goods_code()}", "sp1aaaaaaaaabbbbbbbbbxxxxxxxxq2222", 3003, 参数不合法]
+
+
+teststeps:
+-
+    name: step1-login
+    testcase: testcase/login/login_success.yml
+-
+    name: 添加商品
+    base_url: ${ENV(base_url)}
+    request:
+        url: /api/v2/goods
+        method: POST
+        headers:
+            Authorization: Token $token
+        json:
+            goodsname: $goodsname
+            goodscode: $goodscode
+            merchantid: $merchantid
+            merchantname: $merchantname
+            goodsprice: $goodsprice
+            stock: $stock
+            goodsgroupid: $goodsgroupid
+            goodsstatus: $goodsstatus
+            price: $price
+    validate:
+        - eq: [body.code, $code]
+        - eq: [body.msg, $msg]

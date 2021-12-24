@@ -1,0 +1,17 @@
+config:
+    name: 上传文件
+    base_url: http://49.235.92.12:8201
+
+teststeps:
+-
+    name: step-上传文件
+    request:
+        url: /api/v1/upfile/
+        method: POST
+        upload:
+            file: data/part_0.png
+            title: 上海-悠悠
+    validate:
+        - eq: [status_code, 200]
+        - eq: [body.code, 0]
+        - eq: [body.msg, success!]

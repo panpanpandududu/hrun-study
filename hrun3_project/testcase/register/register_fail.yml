@@ -1,0 +1,27 @@
+config:
+    name: 注册用例-注册失败场景
+    base_url: ${ENV(base_url)}
+    parameters:
+         user-psw-email:
+         - ["", "123456", "123@qq.com"]
+         - [a, 123456xx, "123@qq.com"]
+         - [aaaaaaaaaabbbbbbbbbbcccccccccc12, "", "123@qq.com"]
+         - [testx123, "", "123@qq.com"]
+         - [testx123, "12345", "123@qq.com"]
+         - [testx123, "12345678912345678", "123@qq.com"]
+         - [testx123, "123456", "12345"]
+
+
+teststeps:
+-
+    name: 注册失败-参数不合法
+    request:
+        url: /api/v1/register
+        method: POST
+        json:
+            username: $user
+            password: $psw
+            email: $email
+    validate:
+        - eq: [body.code, 3003]
+        - eq: [body.msg, 参数不合法]

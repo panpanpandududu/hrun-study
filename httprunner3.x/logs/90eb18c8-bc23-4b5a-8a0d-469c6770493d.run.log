@@ -1,0 +1,51 @@
+2021-08-17 19:43:07.347 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀıµÄÃèÊö, TestCase ID: 90eb18c8-bc23-4b5a-8a0d-469c6770493d
+2021-08-17 19:43:07.350 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-login >>>>>>
+2021-08-17 19:43:07.542 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.1.125, Port: 25269
+2021-08-17 19:43:07.543 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-08-17 19:43:07.545 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/login
+headers  : {
+    "User-Agent": "python-requests/2.26.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-90eb18c8-bc23-4b5a-8a0d-469c6770493d-587362",
+    "Content-Length": "42",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "username": "test",
+    "password": "123456"
+}
+
+2021-08-17 19:43:07.553 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Tue, 17 Aug 2021 11:43:07 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "bcc61183a2afa51fd7b9b3549d59351acb51f3e0"
+}
+
+2021-08-17 19:43:07.555 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 180.48 ms, response_length: 0 bytes
+2021-08-17 19:43:07.557 | INFO     | httprunner.response:extract:176 - extract mapping: {'token': 'bcc61183a2afa51fd7b9b3549d59351acb51f3e0'}
+2021-08-17 19:43:07.562 | INFO     | httprunner.response:validate:246 - assert status_code equal 200(int)	==> pass
+2021-08-17 19:43:07.563 | INFO     | httprunner.response:validate:246 - assert body.code equal 0(int)	==> pass
+2021-08-17 19:43:07.570 | INFO     | httprunner.runner:__run_step:304 - run step end: step-login <<<<<<
+

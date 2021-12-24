@@ -1,0 +1,36 @@
+config:
+    name: testcase description
+    variables: {}
+    verify: false
+teststeps:
+-   name: /api/v1/login
+    request:
+        headers:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Connection: keep-alive
+            Content-Length: '43'
+            Content-Type: application/json
+            Host: 49.235.92.12:8201
+        json:
+            password: '123456'
+            username: test
+        method: POST
+        url: http://49.235.92.12:8201/api/v1/login
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - body.code
+        - 0
+    -   eq:
+        - body.msg
+        - login success!
+    -   eq:
+        - body.username
+        - test
+

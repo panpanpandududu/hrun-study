@@ -1,0 +1,21 @@
+config:
+    name: 用例描述-登录用例
+    variables:
+        user: test1
+        psw: "123456"
+
+teststeps:
+-
+    name: step-登录
+    request:
+        url: http://49.235.92.12:8201/api/v1/login
+        method: POST
+        json:
+            username: $user
+            password: $psw
+    validate:
+        - eq: [status_code, 200]
+        - eq: [body.msg, login success!]
+        - eq: [body.code, 0]
+        - eq: [body.username, $user]
+        - len_eq: [body.token, 40]

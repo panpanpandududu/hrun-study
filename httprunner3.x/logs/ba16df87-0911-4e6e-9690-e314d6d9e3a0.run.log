@@ -1,0 +1,10 @@
+2021-07-20 22:42:46.453 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀýÃèÊö-µÇÂ¼ÓÃÀý, TestCase ID: ba16df87-0911-4e6e-9690-e314d6d9e3a0
+2021-07-20 22:42:46.454 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-µÇÂ¼ >>>>>>
+2021-07-20 22:42:46.457 | INFO     | httprunner.runner:__call_hooks:112 - call hook actions: setup request
+2021-07-20 22:42:46.462 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${setup_hook()}
+2021-07-20 22:42:46.463 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${request_sign(request)}
+2021-07-20 22:42:46.464 | ERROR    | httprunner.parser:parse_string:343 - call function error:
+func_name: request_sign
+args: ['request']
+kwargs: {}
+AttributeError: 'str' object has no attribute 'get'

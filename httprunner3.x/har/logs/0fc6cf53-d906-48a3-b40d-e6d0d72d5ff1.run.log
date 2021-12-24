@@ -1,0 +1,54 @@
+2021-07-10 18:26:40.620 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: testcase description, TestCase ID: 0fc6cf53-d906-48a3-b40d-e6d0d72d5ff1
+2021-07-10 18:26:40.621 | INFO     | httprunner.runner:__run_step:292 - run step begin: /api/v1/login >>>>>>
+2021-07-10 18:26:40.799 | DEBUG    | httprunner.client:request:186 - client IP: 127.0.0.1, Port: 3545
+2021-07-10 18:26:40.799 | DEBUG    | httprunner.client:request:194 - server IP: 127.0.0.1, Port: 8888
+2021-07-10 18:26:40.800 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/login
+headers  : {
+    "User-Agent": "python-requests/2.25.1",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Host": "49.235.92.12:8201",
+    "Content-Type": "application/json",
+    "Content-Length": "42",
+    "HRUN-Request-ID": "HRUN-0fc6cf53-d906-48a3-b40d-e6d0d72d5ff1-800622"
+}
+cookies  : {}
+body     : {
+    "username": "test",
+    "password": "123456"
+}
+
+2021-07-10 18:26:40.802 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Sat, 10 Jul 2021 10:26:42 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "8e8f535f63df37fe1fc9ea49a42d9f49db372050"
+}
+
+2021-07-10 18:26:40.802 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 177.03 ms, response_length: 0 bytes
+2021-07-10 18:26:40.803 | INFO     | httprunner.response:validate:246 - assert status_code equal 200(int)	==> pass
+2021-07-10 18:26:40.803 | INFO     | httprunner.response:validate:246 - assert headers."Content-Type" equal application/json(str)	==> pass
+2021-07-10 18:26:40.803 | INFO     | httprunner.response:validate:246 - assert body.code equal 0(int)	==> pass
+2021-07-10 18:26:40.803 | INFO     | httprunner.response:validate:246 - assert body.msg equal login success!(str)	==> pass
+2021-07-10 18:26:40.803 | INFO     | httprunner.response:validate:246 - assert body.username equal test(str)	==> pass
+2021-07-10 18:26:40.804 | INFO     | httprunner.runner:__run_step:304 - run step end: /api/v1/login <<<<<<
+

@@ -1,0 +1,32 @@
+config:
+    name: 登录sign签名接口
+    base_url: ${ENV(base_url)}
+    variables:
+        user: test
+        psw: "123456"
+        code: 0
+        msg: login success!
+        len_token: 40
+    parameters:
+        user-psw-code-msg-len_token:
+        - [test, "123456", 0, login success!, 40]
+        - [test_xxx_1, "123456", 3003, 账号或密码不正确, 0]
+        - [test1, "123456xx", 3003, 账号或密码不正确, 0]
+        - ["", "", 3003, 账号或密码不正确, 0]
+
+teststeps:
+-
+    name: 测试步骤：login
+    request:
+        url: /api/v3/login
+        method: POST
+        json:
+            username: $user
+            password: $psw
+            sign: x
+    validate:
+        - eq: [body.code, $code]
+        - eq: [body.msg, $msg]
+        - len_eq: [body.token, $len_token]
+    setup_hooks:
+        - ${setup_request($request)}

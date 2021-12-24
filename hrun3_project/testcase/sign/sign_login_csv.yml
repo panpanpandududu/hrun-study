@@ -1,0 +1,28 @@
+config:
+    name: 登录sign签名接口
+    base_url: ${ENV(base_url)}
+    variables:
+        user: test
+        psw: "123456"
+        code: 0
+        msg: login success!
+        len_token: 40
+    parameters:
+        user-psw-code-msg-len_token: ${P(data/sign_user_password.csv)}
+
+teststeps:
+-
+    name: 测试步骤：login
+    request:
+        url: /api/v3/login
+        method: POST
+        json:
+            username: $user
+            password: $psw
+            sign: x
+    validate:
+        - eq: [body.code, "${str_to_int($code)}"]
+        - eq: [body.msg, $msg]
+        - len_eq: [body.token, "${str_to_int($len_token)}"]
+    setup_hooks:
+        - ${setup_request($request)}

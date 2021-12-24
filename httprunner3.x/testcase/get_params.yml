@@ -1,0 +1,16 @@
+config:
+    name: get_goods
+
+teststeps:
+-
+    name: step-goods
+    request:
+        method: GET
+        url: http://49.235.92.12:8201/api/v1/goods
+        params:
+            page: 1
+            size: 2
+    validate:
+    - eq: [status_code, 200]
+    - eq: [body.code, 0]
+    - eq: [body.msg, success!]

@@ -1,0 +1,21 @@
+config:
+    name:  注册-用一个没注册过的账号注册，注册成功
+    base_url: ${ENV(base_url)}
+    parameters:
+         user-psw-email:
+         - ["${register_user()}", "123456", ""]
+         - ["${register_user()}", "123456", "123@qq.com"]
+
+teststeps:
+-
+    name: step-注册
+    request:
+        url: /api/v1/register
+        method: POST
+        json:
+            username: $user
+            password: $psw
+            email: ""
+    validate:
+        - eq: [body.code, 0]
+        - eq: [body.msg, register success!]

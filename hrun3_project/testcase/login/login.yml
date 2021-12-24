@@ -1,0 +1,25 @@
+config:
+    name: 用例描述-登录用例参数化
+    base_url: ${ENV(base_url)}
+    variables:
+        user: ${ENV(user)}
+        psw: ${ENV(psw)}
+    parameters:
+         user-psw:
+         - [xxyyzz, "123456"]
+         - [test123, "1111111"]
+         - ['', '']
+
+teststeps:
+-
+    name: step-登录
+    request:
+        url: /api/v1/login
+        method: POST
+        json:
+            username: $user
+            password: $psw
+    validate:
+        - eq: [status_code, 200]
+        - eq: [body.code, 3003]
+        - len_eq: [body.token, 0]

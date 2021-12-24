@@ -1,0 +1,2 @@
+2021-07-21 00:54:51.199 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: 用例描述-登录用例, TestCase ID: 21e0a274-af79-4a1a-82b4-8618d55dbf3b
+2021-07-21 00:54:51.203 | INFO     | httprunner.runner:__run_step:292 - run step begin: 修改商品 >>>>>>

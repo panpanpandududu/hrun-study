@@ -1,0 +1,48 @@
+2021-07-21 00:11:32.066 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: file, TestCase ID: 3adaac0f-c1bd-4611-90ac-87e22a9cbfa0
+2021-07-21 00:11:32.069 | INFO     | httprunner.runner:__run_step:292 - run step begin: upload file >>>>>>
+2021-07-21 00:11:32.101 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.1.125, Port: 17060
+2021-07-21 00:11:32.102 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-07-21 00:11:32.102 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/upfile/
+headers  : {
+    "User-Agent": "python-requests/2.25.1",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Content-Type": "multipart/form-data; boundary=b6acf1e3f6624948a21abab9e1e24543",
+    "HRUN-Request-ID": "HRUN-3adaac0f-c1bd-4611-90ac-87e22a9cbfa0-492071",
+    "Content-Length": "235"
+}
+cookies  : {}
+body     : upload file stream (OMITTED)
+
+2021-07-21 00:11:32.104 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 400
+headers  : {
+    "Date": "Wed, 21 Jul 2021 04:11:47 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "122"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 400,
+    "msg": "bad request",
+    "data": {
+        "file": [
+            "\u63d0\u4ea4\u7684\u6570\u636e\u4e0d\u662f\u4e00\u4e2a\u6587\u4ef6\u3002\u8bf7\u68c0\u67e5\u8868\u5355\u7684\u7f16\u7801\u7c7b\u578b\u3002"
+        ]
+    }
+}
+
+2021-07-21 00:11:32.105 | ERROR    | httprunner.client:request:215 - 400 Client Error: Bad Request for url: http://49.235.92.12:8201/api/v1/upfile/
+2021-07-21 00:11:32.125 | INFO     | httprunner.runner:__run_step:304 - run step end: upload file <<<<<<
+

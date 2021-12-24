@@ -1,0 +1,48 @@
+2021-07-21 00:12:31.213 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: 用例描述-文件上传, TestCase ID: 80c11b1f-82a3-4274-86a9-d29a10057a96
+2021-07-21 00:12:31.216 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-上传文件 >>>>>>
+2021-07-21 00:12:31.459 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.1.125, Port: 17064
+2021-07-21 00:12:31.460 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-07-21 00:12:31.462 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/upfile/
+headers  : {
+    "User-Agent": "python-requests/2.25.1",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Content-Type": "multipart/form-data; boundary=0ce43bd2ac654412b8de1577bc65c49e",
+    "HRUN-Request-ID": "HRUN-80c11b1f-82a3-4274-86a9-d29a10057a96-551218",
+    "Content-Length": "39337"
+}
+cookies  : {}
+body     : upload file stream (OMITTED)
+
+2021-07-21 00:12:31.463 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Wed, 21 Jul 2021 04:12:47 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "130"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "success!",
+    "data": {
+        "file": "/media/up_image/part_0.png",
+        "title": "\u4e0a\u6d77-\u60a0\u60a0",
+        "timestamp": "2021-07-21 12:12:47"
+    }
+}
+
+2021-07-21 00:12:31.464 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 240.79 ms, response_length: 0 bytes
+2021-07-21 00:12:31.465 | INFO     | httprunner.runner:__run_step:304 - run step end: step-上传文件 <<<<<<
+

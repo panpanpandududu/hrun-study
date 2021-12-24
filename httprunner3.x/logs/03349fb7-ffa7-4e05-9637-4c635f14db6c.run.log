@@ -1,0 +1,48 @@
+2021-08-12 18:40:40.799 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀýµÄÃèÊö, TestCase ID: 03349fb7-ffa7-4e05-9637-4c635f14db6c
+2021-08-12 18:40:40.801 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-login >>>>>>
+2021-08-12 18:40:40.969 | DEBUG    | httprunner.client:request:186 - client IP: 127.0.0.1, Port: 1523
+2021-08-12 18:40:40.970 | DEBUG    | httprunner.client:request:194 - server IP: 127.0.0.1, Port: 8888
+2021-08-12 18:40:40.985 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/login
+headers  : {
+    "User-Agent": "python-requests/2.26.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-03349fb7-ffa7-4e05-9637-4c635f14db6c-840802",
+    "Content-Length": "42",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "username": "test",
+    "password": "123456"
+}
+
+2021-08-12 18:40:40.986 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Thu, 12 Aug 2021 10:40:41 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "fa296682f5b53391c165b9e901527dbe0b00366d"
+}
+
+2021-08-12 18:40:40.986 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 166.81 ms, response_length: 0 bytes
+2021-08-12 18:40:40.986 | INFO     | httprunner.runner:__run_step:304 - run step end: step-login <<<<<<
+

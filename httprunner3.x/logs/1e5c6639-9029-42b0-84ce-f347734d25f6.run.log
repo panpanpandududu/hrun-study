@@ -1,0 +1,52 @@
+2021-07-22 08:32:50.726 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀıÃèÊö-µÇÂ¼ÓÃÀı, TestCase ID: 1e5c6639-9029-42b0-84ce-f347734d25f6
+2021-07-22 08:32:50.727 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-µÇÂ¼ >>>>>>
+2021-07-22 08:32:50.889 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.1.125, Port: 1077
+2021-07-22 08:32:50.890 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-07-22 08:32:50.891 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/login
+headers  : {
+    "User-Agent": "python-requests/2.25.1",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-1e5c6639-9029-42b0-84ce-f347734d25f6-970727",
+    "Content-Length": "42",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "username": "test",
+    "password": "123456"
+}
+
+2021-07-22 08:32:50.893 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Thu, 22 Jul 2021 00:32:49 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "dd396e3dfc87b5e7ee598f48eddae14b2d2a49cc"
+}
+
+2021-07-22 08:32:50.894 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 162.41 ms, response_length: 0 bytes
+2021-07-22 08:32:50.895 | INFO     | httprunner.response:extract:176 - extract mapping: {'token': 'dd396e3dfc87b5e7ee598f48eddae14b2d2a49cc'}
+2021-07-22 08:32:50.896 | INFO     | httprunner.response:validate:246 - assert status_code equal 200(int)	==> pass
+2021-07-22 08:32:50.896 | INFO     | httprunner.response:validate:246 - assert body.msg equal login success!(str)	==> pass
+2021-07-22 08:32:50.897 | INFO     | httprunner.response:validate:246 - assert body.code equal 0(int)	==> pass
+2021-07-22 08:32:50.898 | INFO     | httprunner.runner:__run_step:304 - run step end: step-µÇÂ¼ <<<<<<
+

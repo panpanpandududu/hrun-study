@@ -1,0 +1,69 @@
+2021-08-17 17:49:26.114 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: µÇÂ¼v4ÓÃÀý, TestCase ID: ee4690b1-7f43-4d6c-9635-9ca71fd5339c
+2021-08-17 17:49:26.117 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-login >>>>>>
+2021-08-17 17:49:26.267 | DEBUG    | httprunner.client:request:186 - client IP: 127.0.0.1, Port: 4734
+2021-08-17 17:49:26.268 | DEBUG    | httprunner.client:request:194 - server IP: 127.0.0.1, Port: 8888
+2021-08-17 17:49:26.270 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v4/login
+headers  : {
+    "User-Agent": "python-requests/2.26.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-ee4690b1-7f43-4d6c-9635-9ca71fd5339c-766118",
+    "Content-Length": "29",
+    "Content-Type": "application/x-www-form-urlencoded"
+}
+cookies  : {}
+body     : username=test&password=123456
+
+2021-08-17 17:49:26.273 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Tue, 17 Aug 2021 09:49:26 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "68ab8fd91a823d4531fc920a0ced70774143ff65"
+}
+
+2021-08-17 17:49:26.274 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 148.89 ms, response_length: 0 bytes
+2021-08-17 17:49:26.275 | INFO     | httprunner.response:validate:246 - assert status_code equal 200(int)	==> pass
+2021-08-17 17:49:26.276 | INFO     | httprunner.response:validate:246 - assert body.code equal 0(int)	==> pass
+2021-08-17 17:49:26.276 | ERROR    | httprunner.response:validate:263 - assert ok equal 0(int)	==> fail
+check_item: ok
+check_value: None(NoneType)
+assert_method: equal
+expect_value: 0(int)
+2021-08-17 17:49:26.277 | ERROR    | httprunner.runner:log_req_resp_details:194 - 
+******************************** DETAILED REQUEST & RESPONSE ********************************
+====== request details ======
+url: http://49.235.92.12:8201/api/v4/login
+method: POST
+headers: {'HRUN-Request-ID': 'HRUN-ee4690b1-7f43-4d6c-9635-9ca71fd5339c-766118'}
+params: {}
+data: {'username': 'test', 'password': '123456'}
+cookies: {}
+timeout: 120
+allow_redirects: True
+verify: False
+json: None
+
+====== response details ======
+status_code: 200
+headers: {'Date': 'Tue, 17 Aug 2021 09:49:26 GMT', 'Server': 'WSGIServer/0.2 CPython/3.6.8', 'Content-Type': 'application/json', 'Vary': 'Accept, Cookie', 'Allow': 'POST, OPTIONS', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Length': '109'}
+body: '{"code": 0, "msg": "login success!", "username": "test", "token": "68ab8fd91a823d4531fc920a0ced70774143ff65"}'
+

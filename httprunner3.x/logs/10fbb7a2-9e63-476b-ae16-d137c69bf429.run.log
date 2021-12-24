@@ -1,0 +1,10 @@
+2021-07-20 22:45:27.276 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀýÃèÊö-µÇÂ¼ÓÃÀý, TestCase ID: 10fbb7a2-9e63-476b-ae16-d137c69bf429
+2021-07-20 22:45:27.279 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-µÇÂ¼ >>>>>>
+2021-07-20 22:45:27.281 | INFO     | httprunner.runner:__call_hooks:112 - call hook actions: setup request
+2021-07-20 22:45:27.281 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${setup_hook()}
+2021-07-20 22:45:27.282 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${request_sign($request)}
+2021-07-20 22:45:27.283 | ERROR    | httprunner.parser:parse_string:343 - call function error:
+func_name: request_sign
+args: [{'method': 'POST', 'url': '/api/v1/login', 'params': {}, 'headers': {'HRUN-Request-ID': 'HRUN-10fbb7a2-9e63-476b-ae16-d137c69bf429-327281'}, 'req_json': {'username': 'test1', 'password': '123456'}, 'data': None, 'cookies': {}, 'timeout': 120, 'allow_redirects': True, 'verify': False}]
+kwargs: {}
+TypeError: 'NoneType' object does not support item assignment

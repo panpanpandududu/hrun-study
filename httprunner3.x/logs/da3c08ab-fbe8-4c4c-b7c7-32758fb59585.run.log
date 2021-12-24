@@ -1,0 +1,91 @@
+2021-11-17 16:46:55.616 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: 用例描述-修改商品用例, TestCase ID: da3c08ab-fbe8-4c4c-b7c7-32758fb59585
+2021-11-17 16:46:55.618 | INFO     | httprunner.runner:__run_step:292 - run step begin: 修改商品 >>>>>>
+2021-11-17 16:46:55.659 | DEBUG    | httprunner.client:request:186 - client IP: 127.0.0.1, Port: 49857
+2021-11-17 16:46:55.660 | DEBUG    | httprunner.client:request:194 - server IP: 127.0.0.1, Port: 8888
+2021-11-17 16:46:55.661 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : PUT
+url      : http://49.235.92.12:8201/api/v1/goods/1
+headers  : {
+    "User-Agent": "python-requests/2.24.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-da3c08ab-fbe8-4c4c-b7c7-32758fb59585-815619",
+    "Content-Length": "203",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "goodsname": "yoyo",
+    "goodscode": "sp_100861117",
+    "merchantid": "10001",
+    "merchantname": "悠悠学堂",
+    "goodsprice": 99.9,
+    "stock": 100,
+    "goodsgroupid": 0,
+    "goodsstatus": 1,
+    "price": 21.0
+}
+
+2021-11-17 16:46:55.663 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Wed, 17 Nov 2021 08:46:55 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "GET, PUT, DELETE, HEAD, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "103"
+}
+cookies  : {}
+encoding : None
+content_type : application/json
+body     : {
+    "code": 3003,
+    "msg": "参数不合法",
+    "data": {
+        "goodscode": [
+            "该字段必须唯一,不能有重复。"
+        ]
+    }
+}
+
+2021-11-17 16:46:55.663 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 39.86 ms, response_length: 0 bytes
+2021-11-17 16:46:55.664 | INFO     | httprunner.response:validate:249 - assert status_code equal 200(int)	==> pass
+2021-11-17 16:46:55.665 | ERROR    | httprunner.response:validate:266 - assert body.code equal 0(int)	==> fail
+check_item: body.code
+check_value: 3003(int)
+assert_method: equal
+expect_value: 0(int)
+2021-11-17 16:46:55.666 | ERROR    | httprunner.response:validate:266 - assert body.msg equal success!(str)	==> fail
+check_item: body.msg
+check_value: 参数不合法(str)
+assert_method: equal
+expect_value: success!(str)
+2021-11-17 16:46:55.721 | ERROR    | httprunner.response:validate:266 - assert body.data.goodsstatus equal 1(int)	==> fail
+check_item: body.data.goodsstatus
+check_value: None(NoneType)
+assert_method: equal
+expect_value: 1(int)
+2021-11-17 16:46:55.723 | ERROR    | httprunner.runner:log_req_resp_details:194 - 
+******************************** DETAILED REQUEST & RESPONSE ********************************
+====== request details ======
+url: http://49.235.92.12:8201/api/v1/goods/1
+method: PUT
+headers: {'HRUN-Request-ID': 'HRUN-da3c08ab-fbe8-4c4c-b7c7-32758fb59585-815619'}
+params: {}
+data: None
+cookies: {}
+timeout: 120
+allow_redirects: True
+verify: False
+json: {'goodsname': 'yoyo', 'goodscode': 'sp_100861117', 'merchantid': '10001', 'merchantname': '悠悠学堂', 'goodsprice': 99.9, 'stock': 100, 'goodsgroupid': 0, 'goodsstatus': 1, 'price': 21.0}
+
+====== response details ======
+status_code: 200
+headers: {'Date': 'Wed, 17 Nov 2021 08:46:55 GMT', 'Server': 'WSGIServer/0.2 CPython/3.6.8', 'Content-Type': 'application/json', 'Vary': 'Accept, Cookie', 'Allow': 'GET, PUT, DELETE, HEAD, OPTIONS', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Length': '103'}
+body: '{"code":3003,"msg":"参数不合法","data":{"goodscode":["该字段必须唯一,不能有重复。"]}}'
+

@@ -1,0 +1,26 @@
+config:
+    name: 登陆接口-输入正确账号,正确密码，登陆成功
+    base_url: ${ENV(base_url)}
+    variables:
+        user: ${ENV(user)}
+        psw: ${ENV(psw)}
+    export:
+    - token
+
+teststeps:
+-
+    name: step-登录
+    request:
+        url: /api/v1/login
+        method: POST
+        json:
+            username: $user
+            password: $psw
+    extract:
+        token: body.token
+    validate:
+        - eq: [status_code, 200]
+        - eq: [body.msg, login success!]
+        - eq: [body.code, 0]
+        - eq: [body.username, $user]
+        - len_eq: [body.token, 40]

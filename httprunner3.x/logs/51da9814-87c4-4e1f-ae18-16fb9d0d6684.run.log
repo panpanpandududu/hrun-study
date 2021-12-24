@@ -1,0 +1,56 @@
+2021-08-17 18:20:24.593 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀýµÄÃèÊö, TestCase ID: 51da9814-87c4-4e1f-ae18-16fb9d0d6684
+2021-08-17 18:20:24.595 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-login >>>>>>
+2021-08-17 18:20:24.759 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.1.125, Port: 7037
+2021-08-17 18:20:24.761 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-08-17 18:20:24.762 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/login
+headers  : {
+    "User-Agent": "python-requests/2.26.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-51da9814-87c4-4e1f-ae18-16fb9d0d6684-624601",
+    "Content-Length": "42",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "username": "test",
+    "password": "123456"
+}
+
+2021-08-17 18:20:24.766 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Tue, 17 Aug 2021 10:20:24 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "5d08090bee0429cbdf68e210d78baa5936c54f0c"
+}
+
+2021-08-17 18:20:24.770 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 158.15 ms, response_length: 0 bytes
+2021-08-17 18:20:24.771 | INFO     | httprunner.response:extract:176 - extract mapping: {'token': '5d08090bee0429cbdf68e210d78baa5936c54f0c'}
+2021-08-17 18:20:24.772 | INFO     | httprunner.response:validate:246 - assert status_code equal 200(int)	==> pass
+2021-08-17 18:20:24.773 | INFO     | httprunner.response:validate:246 - assert body.code equal 0(int)	==> pass
+2021-08-17 18:20:24.774 | INFO     | httprunner.response:validate:246 - assert body.msg equal login success!(str)	==> pass
+2021-08-17 18:20:24.775 | ERROR    | httprunner.response:_search_jmespath:158 - failed to search with jmespath
+expression: headers.Content-Type
+data: {'status_code': 200, 'headers': {'Date': 'Tue, 17 Aug 2021 10:20:24 GMT', 'Server': 'WSGIServer/0.2 CPython/3.6.8', 'Content-Type': 'application/json', 'Vary': 'Accept, Cookie', 'Allow': 'POST, OPTIONS', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Length': '109'}, 'cookies': {}, 'body': {'code': 0, 'msg': 'login success!', 'username': 'test', 'token': '5d08090bee0429cbdf68e210d78baa5936c54f0c'}}
+exception: Bad jmespath expression: Unknown token '-':
+headers.Content-Type
+               ^

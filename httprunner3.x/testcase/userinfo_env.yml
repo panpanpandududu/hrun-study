@@ -1,0 +1,40 @@
+config:
+    name: 用例描述-登录用例
+    base_url: ${ENV(base_url)}
+    variables:
+        user: ${ENV(user)}
+        psw: ${ENV(psw)}
+    export:
+    - token
+
+teststeps:
+-
+    name: step-登录
+    request:
+        url: /api/v1/login
+        method: POST
+        json:
+            username: ${ENV(user)}
+            password: ${ENV(psw)}
+    extract:
+        token: body.token
+    validate:
+        - eq: [status_code, 200]
+        - eq: [body.msg, login success!]
+        - eq: [body.code, 0]
+
+-
+    name: step-userinfo
+    request:
+        url: /api/v1/userinfo
+        headers:
+            Authorization: Token $token
+        method: POST
+        json:
+            name: $user
+            sex: M
+            age: 20
+            mail: 283340479@qq.com
+    validate:
+    - eq: [status_code, 200]
+    - eq: [body.code, 0]

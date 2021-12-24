@@ -1,0 +1,57 @@
+2021-07-20 23:52:03.931 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀıÃèÊö-µÇÂ¼ÓÃÀı, TestCase ID: 5b83dccc-5fda-4284-951d-74058d200868
+2021-07-20 23:52:03.934 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-µÇÂ¼ >>>>>>
+2021-07-20 23:52:03.936 | INFO     | httprunner.runner:__call_hooks:112 - call hook actions: setup request
+2021-07-20 23:52:03.937 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${login_sign($request)}
+2021-07-20 23:52:04.160 | DEBUG    | httprunner.client:request:186 - client IP: 127.0.0.1, Port: 16800
+2021-07-20 23:52:04.162 | DEBUG    | httprunner.client:request:194 - server IP: 127.0.0.1, Port: 8888
+2021-07-20 23:52:04.164 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v3/login
+headers  : {
+    "User-Agent": "python-requests/2.25.1",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-5b83dccc-5fda-4284-951d-74058d200868-323936",
+    "Content-Length": "86",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "username": "test",
+    "password": "123456",
+    "sign": "1aca01806e93bb408041965a817666af"
+}
+
+2021-07-20 23:52:04.168 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Wed, 21 Jul 2021 03:52:19 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "7719cf85eb1244f696f04d3994b241b95f52a858"
+}
+
+2021-07-20 23:52:04.172 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 221.32 ms, response_length: 0 bytes
+2021-07-20 23:52:04.178 | INFO     | httprunner.response:extract:176 - extract mapping: {'token': '7719cf85eb1244f696f04d3994b241b95f52a858'}
+2021-07-20 23:52:04.187 | INFO     | httprunner.response:validate:246 - assert status_code equal 200(int)	==> pass
+2021-07-20 23:52:04.188 | INFO     | httprunner.response:validate:246 - assert body.msg equal login success!(str)	==> pass
+2021-07-20 23:52:04.197 | INFO     | httprunner.response:validate:246 - assert body.code equal 0(int)	==> pass
+2021-07-20 23:52:04.203 | INFO     | httprunner.response:validate:246 - assert body.username equal test(str)	==> pass
+2021-07-20 23:52:04.205 | INFO     | httprunner.response:validate:246 - assert body.token length_equal 40(int)	==> pass
+2021-07-20 23:52:04.213 | INFO     | httprunner.runner:__run_step:304 - run step end: step-µÇÂ¼ <<<<<<
+

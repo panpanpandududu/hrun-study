@@ -1,0 +1,124 @@
+2021-11-30 11:12:07.172 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: 用例名称-查询用户信息, TestCase ID: 4f705ea3-c8b8-452f-9be7-b1d6bfd2265a
+2021-11-30 11:12:07.173 | INFO     | httprunner.runner:__run_step:292 - run step begin: step1-login >>>>>>
+2021-11-30 11:12:07.173 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-login >>>>>>
+2021-11-30 11:12:07.359 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.3.35, Port: 49255
+2021-11-30 11:12:07.359 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-11-30 11:12:07.359 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/login
+headers  : {
+    "User-Agent": "python-requests/2.24.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-4f705ea3-c8b8-452f-9be7-b1d6bfd2265a-927173",
+    "Content-Length": "42",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "username": "test",
+    "password": "123456"
+}
+
+2021-11-30 11:12:07.359 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Tue, 30 Nov 2021 03:12:05 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "109"
+}
+cookies  : {}
+encoding : None
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test",
+    "token": "4050b1be145f58eea861ef25214cf1e236eeb6f3"
+}
+
+2021-11-30 11:12:07.359 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 185.27 ms, response_length: 0 bytes
+2021-11-30 11:12:07.359 | INFO     | httprunner.response:extract:179 - extract mapping: {'token': '4050b1be145f58eea861ef25214cf1e236eeb6f3'}
+2021-11-30 11:12:07.359 | INFO     | httprunner.response:validate:249 - assert status_code equal 200(int)	==> pass
+2021-11-30 11:12:07.359 | INFO     | httprunner.response:validate:249 - assert body.code equal 0(int)	==> pass
+2021-11-30 11:12:07.359 | INFO     | httprunner.runner:__run_step:304 - run step end: step-login <<<<<<
+
+2021-11-30 11:12:07.359 | INFO     | httprunner.runner:__run_step_testcase:286 - export variables: {'token': '4050b1be145f58eea861ef25214cf1e236eeb6f3'}
+2021-11-30 11:12:07.359 | INFO     | httprunner.runner:__run_step:304 - run step end: step1-login <<<<<<
+
+2021-11-30 11:12:07.359 | INFO     | httprunner.runner:__run_step:292 - run step begin: step2-info >>>>>>
+2021-11-30 11:12:07.443 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.3.35, Port: 49256
+2021-11-30 11:12:07.443 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-11-30 11:12:07.443 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : GET
+url      : http://49.235.92.12:8201/api/v1/userinfo
+headers  : {
+    "User-Agent": "python-requests/2.24.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Authorization": "Token 4050b1be145f58eea861ef25214cf1e236eeb6f3",
+    "HRUN-Request-ID": "HRUN-4f705ea3-c8b8-452f-9be7-b1d6bfd2265a-927359"
+}
+cookies  : {}
+body     : None
+
+2021-11-30 11:12:07.443 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Tue, 30 Nov 2021 03:12:05 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept",
+    "Allow": "GET, POST, HEAD, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "323"
+}
+cookies  : {}
+encoding : None
+content_type : application/json
+body     : {
+    "msg": "success!",
+    "code": 0,
+    "data": [
+        {
+            "id": 1,
+            "name": "test",
+            "sex": "M",
+            "age": 20,
+            "mail": "283340479@qq.com",
+            "create_time": "2021-11-30"
+        },
+        {
+            "id": 391,
+            "name": "test",
+            "sex": "M",
+            "age": 20,
+            "mail": "12356778@qq.com",
+            "create_time": "2021-11-23"
+        },
+        {
+            "id": 392,
+            "name": "test",
+            "sex": "M",
+            "age": 20,
+            "mail": "12356778@qq.com",
+            "create_time": "2021-11-23"
+        }
+    ]
+}
+
+2021-11-30 11:12:07.443 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 84.64 ms, response_length: 0 bytes
+2021-11-30 11:12:07.443 | INFO     | httprunner.response:validate:249 - assert status_code equal 200(int)	==> pass
+2021-11-30 11:12:07.443 | INFO     | httprunner.response:validate:249 - assert body.code equal 0(int)	==> pass
+2021-11-30 11:12:07.443 | INFO     | httprunner.runner:__run_step:304 - run step end: step2-info <<<<<<
+

@@ -1,0 +1,6 @@
+2021-07-19 17:30:44.493 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀıÃèÊö-µÇÂ¼ÓÃÀı, TestCase ID: aff38c33-f44c-4b42-8f90-9aee5b1501b1
+2021-07-19 17:30:44.495 | ERROR    | httprunner.parser:parse_string:343 - call function error:
+func_name: ENV
+args: ['user']
+kwargs: {}
+EnvNotFound: user

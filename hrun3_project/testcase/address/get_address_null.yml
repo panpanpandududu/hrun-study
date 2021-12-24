@@ -1,0 +1,48 @@
+config:
+    name: 未添加过收件人地址，查询为空
+    base_url: ${ENV(base_url)}
+    variables:
+        user: ${register_user()}
+        psw: "1223456"
+
+teststeps:
+-
+    name: step1-注册新用户
+    request:
+        url: /api/v1/register
+        method: POST
+        json:
+            username: $user
+            password: $psw
+            email: ""
+    validate:
+        - eq: [body.code, 0]
+        - eq: [body.msg, register success!]
+
+-
+    name: step2-登录
+    request:
+        url: /api/v1/login
+        method: POST
+        json:
+            username: $user
+            password: $psw
+    extract:
+        token: body.token
+    validate:
+        - eq: [status_code, 200]
+        - eq: [body.msg, login success!]
+-
+    name: step3-get address
+    request:
+        url: /api/v2/address
+        method: GET
+        headers:
+            Authorization: Token $token
+    validate:
+        - eq: [body.code, 0]
+        - eq: [body.msg, success!]
+        - eq: [body.data.tel, ""]
+        - eq: [body.data.name, ""]
+        - eq: [body.data.address, ""]
+        - eq: [body.data.postal, ""]

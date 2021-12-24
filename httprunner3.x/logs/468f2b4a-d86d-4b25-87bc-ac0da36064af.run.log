@@ -1,0 +1,70 @@
+2021-08-12 19:03:41.049 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: 查询全部商品, TestCase ID: 468f2b4a-d86d-4b25-87bc-ac0da36064af
+2021-08-12 19:03:41.052 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-get goods >>>>>>
+2021-08-12 19:03:41.112 | DEBUG    | httprunner.client:request:186 - client IP: 127.0.0.1, Port: 2427
+2021-08-12 19:03:41.115 | DEBUG    | httprunner.client:request:194 - server IP: 127.0.0.1, Port: 8888
+2021-08-12 19:03:41.115 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : GET
+url      : http://49.235.92.12:8201/api/v1/goods?page=1&size=2
+headers  : {
+    "User-Agent": "python-requests/2.26.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-468f2b4a-d86d-4b25-87bc-ac0da36064af-221054"
+}
+cookies  : {}
+body     : None
+
+2021-08-12 19:03:41.116 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Thu, 12 Aug 2021 11:03:41 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "GET, POST, HEAD, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "614"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "success!",
+    "next": "http://49.235.92.12:8201/api/v1/goods?cursor=cD0yNA%3D%3D&page=1&size=2",
+    "data": [
+        {
+            "id": 23,
+            "create_time": "2021-05-07 16:35:07",
+            "update_time": "2021-08-07 11:51:29",
+            "goodsname": "\u300a\u6d41\u7545\u7684python\u300b",
+            "goodscode": "sp_xds88888",
+            "merchantid": "1001",
+            "merchantname": "\u60a0\u60a0\u5b66\u5802",
+            "goodsprice": 49.9,
+            "stock": 10,
+            "goodsgroupid": 0,
+            "goodsstatus": 1
+        },
+        {
+            "id": 24,
+            "create_time": "2021-05-07 17:04:11",
+            "update_time": "2021-08-09 10:29:31",
+            "goodsname": "yoyo123",
+            "goodscode": "sp_test1",
+            "merchantid": "10001",
+            "merchantname": "\u60a0\u60a0\u5b66\u5802",
+            "goodsprice": 99.9,
+            "stock": 100,
+            "goodsgroupid": 0,
+            "goodsstatus": 1
+        }
+    ]
+}
+
+2021-08-12 19:03:41.117 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 57.94 ms, response_length: 0 bytes
+2021-08-12 19:03:41.117 | INFO     | httprunner.runner:__run_step:304 - run step end: step-get goods <<<<<<
+

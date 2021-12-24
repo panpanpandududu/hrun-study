@@ -1,0 +1,27 @@
+config:
+    name: get_goods
+    base_url: http://49.235.92.12:8201
+
+teststeps:
+-
+    name: step-goods
+    request:
+        method: GET
+        url: /api/v1/goods
+        params:
+            page: 1
+            size: 2
+    validate:
+    - eq: [status_code, 200]
+    - eq: [body.code, 0]
+    - eq: [body.msg, success!]
+
+-
+    name: step-demo
+    request:
+        method: GET
+        url: http://49.235.92.12:7005/api/test/demo
+    validate:
+    - eq: [status_code, 200]
+    - eq: [body.code, 0]
+    - eq: [body.msg, 成功success!]

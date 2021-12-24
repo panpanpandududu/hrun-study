@@ -1,0 +1,48 @@
+2021-07-21 00:19:52.332 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: 上传文件, TestCase ID: 6e716e13-e1bb-4869-b38b-a7bd79a14c57
+2021-07-21 00:19:52.335 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-上传文件 >>>>>>
+2021-07-21 00:19:52.396 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.1.125, Port: 17080
+2021-07-21 00:19:52.397 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-07-21 00:19:52.398 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/upfile/
+headers  : {
+    "User-Agent": "python-requests/2.25.1",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Content-Type": "multipart/form-data; boundary=a6ed6065ffca449cbffe014c4440e5e2",
+    "HRUN-Request-ID": "HRUN-6e716e13-e1bb-4869-b38b-a7bd79a14c57-992337",
+    "Content-Length": "39337"
+}
+cookies  : {}
+body     : upload file stream (OMITTED)
+
+2021-07-21 00:19:52.400 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Wed, 21 Jul 2021 04:20:08 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "138"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "success!",
+    "data": {
+        "file": "/media/up_image/part_0_RmVu7OA.png",
+        "title": "\u4e0a\u6d77-\u60a0\u60a0",
+        "timestamp": "2021-07-21 12:20:08"
+    }
+}
+
+2021-07-21 00:19:52.403 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 58.95 ms, response_length: 0 bytes
+2021-07-21 00:19:52.405 | INFO     | httprunner.runner:__run_step:304 - run step end: step-上传文件 <<<<<<
+

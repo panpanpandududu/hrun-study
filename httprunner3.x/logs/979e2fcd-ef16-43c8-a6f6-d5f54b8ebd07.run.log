@@ -1,0 +1,82 @@
+2021-07-20 23:01:07.561 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀýÃèÊö-µÇÂ¼ÓÃÀý, TestCase ID: 979e2fcd-ef16-43c8-a6f6-d5f54b8ebd07
+2021-07-20 23:01:07.564 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-µÇÂ¼ >>>>>>
+2021-07-20 23:01:07.566 | INFO     | httprunner.runner:__call_hooks:112 - call hook actions: setup request
+2021-07-20 23:01:07.567 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${setup_hook()}
+2021-07-20 23:01:07.568 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${request_sign($request)}
+2021-07-20 23:01:07.722 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.1.125, Port: 16348
+2021-07-20 23:01:07.729 | DEBUG    | httprunner.client:request:194 - server IP: 49.235.92.12, Port: 8201
+2021-07-20 23:01:07.732 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://49.235.92.12:8201/api/v1/login
+headers  : {
+    "User-Agent": "python-requests/2.25.1",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-979e2fcd-ef16-43c8-a6f6-d5f54b8ebd07-267566",
+    "Content-Length": "77",
+    "Content-Type": "application/json"
+}
+cookies  : {}
+body     : {
+    "username": "test1",
+    "password": "123456",
+    "sign": "sign xxxxxxxxxxxxxxxxx"
+}
+
+2021-07-20 23:01:07.737 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Date": "Wed, 21 Jul 2021 03:01:23 GMT",
+    "Server": "WSGIServer/0.2 CPython/3.6.8",
+    "Content-Type": "application/json",
+    "Vary": "Accept, Cookie",
+    "Allow": "POST, OPTIONS",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Length": "110"
+}
+cookies  : {}
+encoding : utf-8
+content_type : application/json
+body     : {
+    "code": 0,
+    "msg": "login success!",
+    "username": "test1",
+    "token": "bf236583852993411987c1ba28cfb5f4519426a0"
+}
+
+2021-07-20 23:01:07.751 | INFO     | httprunner.client:request:218 - status_code: 200, response_time(ms): 151.33 ms, response_length: 0 bytes
+2021-07-20 23:01:07.757 | INFO     | httprunner.runner:__call_hooks:112 - call hook actions: teardown request
+2021-07-20 23:01:07.767 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${teardown_hook()}
+2021-07-20 23:01:07.770 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${response_status($response)}
+2021-07-20 23:01:07.778 | INFO     | httprunner.response:extract:176 - extract mapping: {'token': 'bf236583852993411987c1ba28cfb5f4519426a0'}
+2021-07-20 23:01:07.784 | ERROR    | httprunner.response:validate:263 - assert status_code equal 200(int)	==> fail
+check_item: status_code
+check_value: 203(int)
+assert_method: equal
+expect_value: 200(int)
+2021-07-20 23:01:07.788 | INFO     | httprunner.response:validate:246 - assert body.msg equal login success!(str)	==> pass
+2021-07-20 23:01:07.797 | INFO     | httprunner.response:validate:246 - assert body.code equal 0(int)	==> pass
+2021-07-20 23:01:07.799 | INFO     | httprunner.response:validate:246 - assert body.username equal test1(str)	==> pass
+2021-07-20 23:01:07.803 | INFO     | httprunner.response:validate:246 - assert body.token length_equal 40(int)	==> pass
+2021-07-20 23:01:07.812 | ERROR    | httprunner.runner:log_req_resp_details:194 - 
+******************************** DETAILED REQUEST & RESPONSE ********************************
+====== request details ======
+url: http://49.235.92.12:8201/api/v1/login
+method: POST
+headers: {'HRUN-Request-ID': 'HRUN-979e2fcd-ef16-43c8-a6f6-d5f54b8ebd07-267566'}
+params: {}
+data: None
+cookies: {}
+timeout: 120
+allow_redirects: True
+verify: False
+json: {'username': 'test1', 'password': '123456', 'sign': 'sign xxxxxxxxxxxxxxxxx'}
+
+====== response details ======
+status_code: 200
+headers: {'Date': 'Wed, 21 Jul 2021 03:01:23 GMT', 'Server': 'WSGIServer/0.2 CPython/3.6.8', 'Content-Type': 'application/json', 'Vary': 'Accept, Cookie', 'Allow': 'POST, OPTIONS', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Length': '110'}
+body: '{"code": 0, "msg": "login success!", "username": "test1", "token": "bf236583852993411987c1ba28cfb5f4519426a0"}'
+

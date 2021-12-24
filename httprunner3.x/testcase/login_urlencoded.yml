@@ -1,0 +1,18 @@
+config:
+    name: login-v4
+    base_url: http://49.235.92.12:8201
+
+teststeps:
+-
+    name: step-login
+    request:
+        method: POST
+        url: /api/v4/login
+        data:
+            username: test
+            password: "123456"
+    validate:
+    - eq: [status_code, 200]
+    - eq: [body.code, 0]
+    - eq: [body.msg, login success!]
+

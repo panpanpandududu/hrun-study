@@ -1,0 +1,35 @@
+config:
+    name: 添加收获地址
+    base_url: ${ENV(base_url)}
+    variables:
+        tel: 15001234001
+        name: 上海-悠悠
+        address: 上海市徐汇区xx路1001号
+        postal: 200000
+        code: 0
+        msg: success!
+    parameters:
+        address-code-msg:
+        - [null, 0, success!]
+        - ["", 0, success!]
+        - [12345, 0, success!]
+        - [上海市徐汇区xx 路 1001 号101, 0, success!]
+teststeps:
+-
+    name: step1-login
+    testcase: testcase/login/login_success.yml
+-
+    name: step2-添加收获地址
+    request:
+        url: /api/v2/address
+        method: POST
+        headers:
+            Authorization: Token $token
+        json:
+            tel: $tel
+            name: $name
+            address: $address
+            postal: $postal
+    validate:
+        - eq: [body.code, $code]
+        - eq: [body.msg, $msg]

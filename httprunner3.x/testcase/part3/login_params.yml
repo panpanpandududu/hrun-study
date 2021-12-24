@@ -1,0 +1,37 @@
+config:
+    name: 用例描述-登录用例
+    base_url: http://49.235.92.12:8201
+    variables:
+        user: test1
+        psw: "123456"
+    parameters:
+#        user: [test1, test2, test3, test4]
+#        psw: ["123456", "123456", "123456", "123456"]
+#        user: [test1, test2, test3, test4]
+         user-psw:
+         - [test1, "123456"]
+         - [test2, "123456"]
+         - [test3, "123456"]
+         - [test4, "123456"]
+
+
+    export:
+    - token
+
+teststeps:
+-
+    name: step-登录
+    request:
+        url: /api/v1/login
+        method: POST
+        json:
+            username: $user
+            password: $psw
+    extract:
+        token: body.token
+    validate:
+        - eq: [status_code, 200]
+        - eq: [body.msg, login success!]
+        - eq: [body.code, 0]
+        - eq: [body.username, $user]
+        - len_eq: [body.token, 40]

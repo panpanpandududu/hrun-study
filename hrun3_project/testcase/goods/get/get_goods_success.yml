@@ -1,0 +1,40 @@
+config:
+    name: 查询商品-成功
+    base_url: ${ENV(base_url)}
+    variables:
+        goodsname: yoyo
+        goodscode: ${goods_code()}
+        code: 0
+        msg: success!
+
+
+teststeps:
+-
+    name: step1-login
+    testcase: testcase/login/login_success.yml
+-
+    name: step2-add goods
+    request:
+        url: /api/v2/goods
+        method: POST
+        headers:
+            Authorization: Token $token
+        json:
+            goodsname: $goodsname
+            goodscode: $goodscode
+    extract:
+        get_sp_id: body.data.id
+    validate:
+        - eq: [body.code, 0]
+        - eq: [body.msg, success!]
+
+-
+    name: step3-get goods
+    request:
+        url: /api/v2/goods/$get_sp_id
+        method: GET
+        headers:
+            Authorization: Token $token
+    validate:
+        - eq: [body.code, $code]
+        - eq: [body.msg, $msg]

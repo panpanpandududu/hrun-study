@@ -1,0 +1,40 @@
+config:
+    name: 删除商品-成功
+    base_url: ${ENV(base_url)}
+    variables:
+        goodsname: yoyo
+        goodscode: ${goods_code()}
+        code: 0
+        msg: success!
+
+teststeps:
+-
+    name: step1-login
+    testcase: testcase/login/login_success.yml
+
+-
+    name: step2-add goods
+    request:
+        url: /api/v2/goods
+        method: POST
+        headers:
+            Authorization: Token $token
+        json:
+            goodsname: $goodsname
+            goodscode: $goodscode
+    extract:
+        delete_sp_id: body.data.id
+    validate:
+        - eq: [body.code, 0]
+        - eq: [body.msg, success!]
+
+-
+    name: step3-delete goods
+    request:
+        url: /api/v2/goods/$delete_sp_id
+        method: DELETE
+        headers:
+            Authorization: Token $token
+    validate:
+        - eq: [body.code, 0]
+        - eq: [body.msg, success!]

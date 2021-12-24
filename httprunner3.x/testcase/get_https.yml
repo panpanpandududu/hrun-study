@@ -1,0 +1,10 @@
+config:
+    name: https-blog
+
+
+teststeps:
+-
+    name: step-cnblog
+    request:
+        method: GET
+        url: https://www.cnblogs.com/yoyoketang

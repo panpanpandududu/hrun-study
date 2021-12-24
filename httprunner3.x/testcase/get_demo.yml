@@ -1,0 +1,12 @@
+config:
+    name: demo case
+teststeps:
+-
+    name: step-demo
+    request:
+        method: GET
+        url: http://49.235.92.12:8201/api/test/demo
+    validate:
+    - eq: [status_code, 200]
+    - eq: [body.code, 0]
+    - eq: [body.msg, 成功success!]

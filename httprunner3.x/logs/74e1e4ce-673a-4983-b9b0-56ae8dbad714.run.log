@@ -1,0 +1,9 @@
+2021-07-20 23:50:21.969 | INFO     | httprunner.runner:test_start:451 - Start to run testcase: ÓÃÀýÃèÊö-µÇÂ¼ÓÃÀý, TestCase ID: 74e1e4ce-673a-4983-b9b0-56ae8dbad714
+2021-07-20 23:50:21.972 | INFO     | httprunner.runner:__run_step:292 - run step begin: step-µÇÂ¼ >>>>>>
+2021-07-20 23:50:22.003 | INFO     | httprunner.runner:__call_hooks:112 - call hook actions: setup request
+2021-07-20 23:50:22.004 | DEBUG    | httprunner.runner:__call_hooks:121 - call hook function: ${login_sign($request)}
+2021-07-20 23:50:22.017 | ERROR    | httprunner.parser:parse_string:343 - call function error:
+func_name: login_sign
+args: [{'method': 'POST', 'url': '/api/v3/login', 'params': {}, 'headers': {'HRUN-Request-ID': 'HRUN-74e1e4ce-673a-4983-b9b0-56ae8dbad714-222003'}, 'req_json': {'username': 'test1', 'password': '123456', 'sign': 'xxxxx'}, 'data': None, 'cookies': {}, 'timeout': 120, 'allow_redirects': True, 'verify': False}]
+kwargs: {}
+KeyError: 'req_json'

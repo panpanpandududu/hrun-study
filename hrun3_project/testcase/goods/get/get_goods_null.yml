@@ -1,0 +1,22 @@
+config:
+    name: 查询商品id不存在
+    base_url: ${ENV(base_url)}
+    variables:
+        sp_id_null: 123456
+        code: 1000
+        msg: no info
+
+teststeps:
+-
+    name: step1-login
+    testcase: testcase/login/login_success.yml
+-
+    name: step2-get goods
+    request:
+        url: /api/v2/goods/$sp_id_null
+        method: GET
+        headers:
+            Authorization: Token $token
+    validate:
+        - eq: [body.code, $code]
+        - eq: [body.msg, $msg]
